@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineMotion | Movie Recommendation Chatbot</title>
+    <meta
+      name="description"
+      content="CineMotion is a cinematic recommendation chatbot for movies and web series with mood, genre, platform, and latest-release discovery."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="grid-glow"></div>
+
+      <header class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">CineMotion Assistant</span>
+          <h1>Ask for a vibe. Get a cinematic recommendation flow.</h1>
+          <p>
+            A polished chatbot experience for movie and web-series discovery across moods,
+            mixed genres, and streaming-style requests.
+          </p>
+          <div class="hero-actions" id="promptRail"></div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-label">Discovery Lanes</div>
+          <div class="mini-lanes">
+            <div class="lane-card" id="latestLane"></div>
+            <div class="lane-card" id="trendingLane"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="experience">
+        <aside class="sidebar">
+          <section class="sidebar-card">
+            <div class="sidebar-title">Mood Quick Picks</div>
+            <div class="chip-stack">
+              <button class="quick-chip" data-prompt="Recommend feel-good comedy movies for tonight.">Feel Good</button>
+              <button class="quick-chip" data-prompt="Suggest dark intense web series with premium quality.">Dark Prestige</button>
+              <button class="quick-chip" data-prompt="I want romantic movies with a stylish vibe.">Romantic</button>
+              <button class="quick-chip" data-prompt="Recommend great Bollywood movies that are smart, emotional, and rewatchable.">Bollywood</button>
+              <button class="quick-chip" data-prompt="Give me mind-bending sci-fi and mystery recommendations.">Mind-Bending</button>
+              <button class="quick-chip" data-prompt="Show me Netflix animated series and movies with stunning visuals.">Animated</button>
+              <button class="quick-chip" data-prompt="Recommend cozy mystery series that are fun and easy to binge.">Cozy Mystery</button>
+            </div>
+          </section>
+
+          <section class="sidebar-card">
+            <div class="sidebar-title">What It Understands</div>
+            <ul class="feature-list">
+              <li>Mood-based prompts</li>
+              <li>Mixed genre requests</li>
+              <li>Hollywood and Bollywood discovery</li>
+              <li>Movies and web series</li>
+              <li>Netflix or platform-focused asks</li>
+              <li>Latest and trending style discovery</li>
+            </ul>
+          </section>
+        </aside>
+
+        <section class="chat-shell">
+          <div class="chat-topbar">
+            <div>
+              <span class="status-dot"></span>
+              <span class="topbar-title">Live recommendation mode</span>
+            </div>
+            <span class="topbar-note">Demo catalog with cinematic UI and custom logic</span>
+          </div>
+
+          <div class="chat-log" id="chatLog" aria-live="polite"></div>
+
+          <form class="composer" id="chatForm">
+            <textarea
+              id="chatInput"
+              rows="1"
+              placeholder="Try: Suggest the latest Netflix thriller web series with a dark mood..."
+            ></textarea>
+            <button type="submit" id="sendButton">Send</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="message-avatar"></div>
+        <div class="message-body"></div>
+      </article>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
